@@ -1,0 +1,14 @@
+## IES ##
+
+Requisitos funcionais:
+	
+	* Gerenciar produtos (cadastrar, excluir, alterar e consultar).
+	* Registrar pedido.
+	* Gerenciar cliente (cadastrar, excluir, alterar e consultar).
+	* Gerar relatório de produtos mais vendidos no mês.
+	* Registrar entrada de produto.
+	
+Requisitos não funcionais:
+
+	* O sistema deve ser distribuído em terminais.
+	* Os pedidos devem ser enviados pela rede interna para o teminal 		caixa.
