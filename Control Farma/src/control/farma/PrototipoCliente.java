@@ -9,12 +9,12 @@ package control.farma;
  *
  * @author millas
  */
-public class Prototipo extends javax.swing.JPanel {
+public class PrototipoCliente extends javax.swing.JPanel {
 
 	/**
 	 * Creates new form Prototipo
 	 */
-	public Prototipo() {
+	public PrototipoCliente() {
 		initComponents();
 	}
 
@@ -50,20 +50,20 @@ public class Prototipo extends javax.swing.JPanel {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Nimesulida", "7895616546541", " R$ 15,00"},
-                {"Buscopan", "7896516846532", " R$ 7,00"},
-                {"Apevitin", "7893216549877", " R$ 35,00"},
-                {"Paracetamol", "7893692581472", " R$ 7,00"},
-                {"Dipirona", "7893131466975", " R$ 6,00"},
-                {"Fluoxetina", "7891598753214", " R$ 21,00"}
+                {"Nimesulida", "7895616546541", "01/2018", "Legrand", " R$ 15,00"},
+                {"Buscopan", "7896516846532", "03/2018", "Legrand", " R$ 7,00"},
+                {"Apevitin", "7893216549877", "05/2018", "Legrand", " R$ 35,00"},
+                {"Paracetamol", "7893692581472", "08/2018", "Legrand", " R$ 7,00"},
+                {"Dipirona", "7893131466975", "11/2018", "Legrand", " R$ 6,00"},
+                {"Fluoxetina", "7891598753214", "02/2018", "Legrand", " R$ 21,00"}
             },
             new String [] {
-                "Nome", "Codigo de barra", "Valor"
+                "Nome", "Codigo de barra", "Validade", "Fabricante", "Valor"
             }
         ));
         jScrollPane2.setViewportView(jTable1);
         if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(2).setResizable(false);
+            jTable1.getColumnModel().getColumn(4).setResizable(false);
         }
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
