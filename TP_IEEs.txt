@@ -7,8 +7,9 @@ Requisitos funcionais:
 	* Gerenciar cliente (cadastrar, excluir, alterar e consultar).
 	* Gerar relatório de produtos mais vendidos no mês.
 	* Registrar entrada de produto.
+	* Possibilidade de consultar produto pelo código de barra.
 	
 Requisitos não funcionais:
 
 	* O sistema deve ser distribuído em terminais.
-	* Os pedidos devem ser enviados pela rede interna para o teminal 		caixa.
+	* Os pedidos devem ser enviados pela rede interna para o teminal caixa.

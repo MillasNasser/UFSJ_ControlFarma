@@ -30,3 +30,5 @@
 
 # Debug files
 *.dSYM/
+/Control Farma/nbproject/private/
+/Control Farma/build/
