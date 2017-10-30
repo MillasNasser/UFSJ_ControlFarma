@@ -2,8 +2,8 @@
 Caso de Uso: Receber Pagamento
 Ator Principal: Funcionário Caixa
 Interessados e interesses:
-	Funcionário: Receber o pagamento de um Pedido
-	Cliente: Realizar o pagamento do(s) remédio(s)
+    Funcionário: Receber o pagamento de um Pedido.
+    Cliente: Realizar o pagamento.
 
 Pré-Condições: Pedido ter sido enviado para o caixa.
 Pós-Condições: Nova venda registrada no sistema e Produtos vendidos retirados do estoque.
@@ -13,12 +13,18 @@ Cenário de Sucesso Principal:
 2. O cliente chega ao caixa e entrega a nota referente ao pedido para o funcionário.
 3. O funcionário busca o pedido correspondente no sistema.
 4. O sistema informa o preço total do pedido.
-5. O cliente paga o valor para o funcionário.
-6. O funcionário registra o pagamento e entrega o troco para o cliente caso necessário.
-7. Os produtos vendidos são removidos do sistema.
+5. O funcionário registra o pagamento.
+6. Os produtos vendidos são removidos do sistema.
+7. É impresso uma notinha do pedido, que deve ser entrega ao cliente. 
 
 Fluxos Alternativos:
-	4a. Caso o sistema identifique que o cliente não tenha cadastro.
-		1. O funcionário pode cadastrar o cliente caso este assim deseja (ir para o caso de uso Cadastrar Cliente).
-		2. O sistema aplicará o desconto no valor do Pedido (se necessário).
-		3. Volte para a ação 4.
+    4.a. Cliente sem cadastro
+        4.a.1. O funcionário pode cadastrar o cliente caso este assim deseja.
+        4.a.2. O fluxo é redirecionado para o caso de uso Cadastrar cliente.
+        4.a.3. Ao final o sistema aplicará o desconto no valor do Pedido (se necessário).
+        4.a.4. Volte para a ação 5.
+
+    4.b. Cancelar pedido
+        4.b.1. Haverá uma opção de cancelamento do pedido junto ao preço total.
+        4.b.2. Selecionando esta opção, será requisitado uma confirmação.
+        4.b.3. Ao finalizar irá exibir uma mensagem avisando que o foi cancelado com sucesso.

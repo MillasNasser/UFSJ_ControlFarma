@@ -5,17 +5,19 @@ Interessados e interesses:
 	Funcionário: Realizar uma nova venda de um ou mais remédios
 	Cliente: Comprar um ou mais remédios
 
-Pré-Condições: Nenhuma
+Pré-Condições: Funcionário autenticado e com os produtos em mãos.
 Pós-Condições: Remédios serão adicionados a um novo pedido que será recebido pelo caixa.
 
 Cenário de Sucesso Principal:
-1. O cliente entrega para o funcionário o(s) remédio(s) que deseja comprar.
-2. O funcionário cria um novo Pedido e adiciona o(s) remédio(s).
-3. O funcionário finaliza o Pedido (COMPLEMENTAR AQUI).
-4. O desconto para clientes cadastrados é aplicado ao Pedido finalizado.
-5. O Pedido finalizado é enviado via rede interna para o terminal caixa.
+1. O funcionário cria um novo Pedido e adiciona o(s) remédio(s).
+2. É gerado uma pré-visualização do pedido.
+3. Solicita uma confirmação ao finalizar.
+2. O funcionário finaliza o Pedido.
+3. O desconto para clientes cadastrados é aplicado ao Pedido finalizado.
+4. O Pedido finalizado é enviado via rede interna para o terminal caixa.
 
 Fluxos Alternativos:
-	4a. Caso o cliente não esteja cadastrado.
+	4.a. Caso o cliente não esteja cadastrado.
 		1. O funcionário pode cadastrar o cliente caso este assim deseja (ir para o caso de uso Cadastrar Cliente).
 		2. Vá para a ação 5
+

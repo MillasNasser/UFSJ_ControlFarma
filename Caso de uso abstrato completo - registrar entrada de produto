@@ -18,11 +18,11 @@ Cenário de Sucesso principal:
 6. Uma nota de registro é gerada e armazenada na base de dados.
 7. É exibida uma mensagem de sucesso e o gerente é redirecionado para 		tela inicial.
 Fluxos Alternativos:
-3.a O produto recebido não esta presente no sistema.
-	3.a.1 Exibe uma mensagem de alerta.
-	3.a.2 O controle é transferido para o caso de uso Gerenciar Produto.
-	3.a.3 Ao finalizar o controle e retransferido ao passo 3.
-4.a Funcionário insere dados incorretos.
-	4.a.1 Será exibido junto a pré-visualização uma opção de retorno
-		ao passo 3.
-	4.a.2 O funcionário é redirecionado ao passo 3.
+	3.a O produto recebido não esta presente no sistema.
+		3.a.1 Exibe uma mensagem de alerta.
+		3.a.2 O controle é transferido para o caso de uso Gerenciar Produto.
+		3.a.3 Ao finalizar o controle e retransferido ao passo 3.
+	4.a Funcionário insere dados incorretos.
+		4.a.1 Será exibido junto a pré-visualização uma opção de retorno
+			ao passo 3.
+		4.a.2 O funcionário é redirecionado ao passo 3.
