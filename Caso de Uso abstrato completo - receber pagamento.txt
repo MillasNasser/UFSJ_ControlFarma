@@ -1,0 +1,20 @@
+1 Descrição
+Caso de Uso: Receber Pagamento
+Ator Principal: Funcionário Caixa
+Interessados e interesses:
+	Funcionário: Receber o pagamento de um Pedido
+	Cliente: Realizar o pagamento do(s) remédio(s)
+
+Pré-Condições: Nenhuma
+Pós-Condições: Remédios serão adicionados a um novo pedido que será recebido pelo caixa.
+
+Cenário de Sucesso Principal:
+1. O cliente entrega para o funcionário o(s) remédio(s) que deseja comprar.
+2. O funcionário cria um novo Pedido e adiciona o(s) remédio(s).
+3. O funcionário finaliza o Pedido (COMPLEMENTAR AQUI).
+4. O desconto para clientes cadastrados é aplicado ao Pedidio finalizado.
+5. O Pedido finalizado é enviado via rede interna para o terminal caixa.
+
+4a. Caso o cliente não esteja cadastrado.
+	4a.1 - O funcionário pode cadastrar o cliente caso este assim deseja.
+	4a.2 - Vá para a ação 5

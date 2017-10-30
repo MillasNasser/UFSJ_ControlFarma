@@ -8,7 +8,7 @@ Requisitos funcionais:
 	* Gerar relatório de produtos mais vendidos no mês.
 	* Registrar entrada de produto.
 	* Possibilidade de consultar produto pelo código de barra.
-	* A notinha deverá ter um identificador
+	* A notinha deverá ter um identificador.
 	
 Requisitos não funcionais:
 
