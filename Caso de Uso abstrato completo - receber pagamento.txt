@@ -5,16 +5,20 @@ Interessados e interesses:
 	Funcionário: Receber o pagamento de um Pedido
 	Cliente: Realizar o pagamento do(s) remédio(s)
 
-Pré-Condições: Nenhuma
-Pós-Condições: Remédios serão adicionados a um novo pedido que será recebido pelo caixa.
+Pré-Condições: Pedido ter sido enviado para o caixa.
+Pós-Condições: Nova venda registrada no sistema e Produtos vendidos retirados do estoque.
 
 Cenário de Sucesso Principal:
-1. O cliente entrega para o funcionário o(s) remédio(s) que deseja comprar.
-2. O funcionário cria um novo Pedido e adiciona o(s) remédio(s).
-3. O funcionário finaliza o Pedido (COMPLEMENTAR AQUI).
-4. O desconto para clientes cadastrados é aplicado ao Pedidio finalizado.
-5. O Pedido finalizado é enviado via rede interna para o terminal caixa.
+1. O terminal caixa recebe um novo Pedido vindo de um terminal balcão.
+2. O cliente chega ao caixa e entrega a nota referente ao pedido para o funcionário.
+3. O funcionário busca o pedido correspondente no sistema.
+4. O sistema informa o preço total do pedido.
+5. O cliente paga o valor para o funcionário.
+6. O funcionário registra o pagamento e entrega o troco para o cliente caso necessário.
+7. Os produtos vendidos são removidos do sistema.
 
-4a. Caso o cliente não esteja cadastrado.
-	4a.1 - O funcionário pode cadastrar o cliente caso este assim deseja.
-	4a.2 - Vá para a ação 5
+Fluxos Alternativos:
+	4a. Caso o sistema identifique que o cliente não tenha cadastro.
+		1. O funcionário pode cadastrar o cliente caso este assim deseja (ir para o caso de uso Cadastrar Cliente).
+		2. O sistema aplicará o desconto no valor do Pedido (se necessário).
+		3. Volte para a ação 4.
