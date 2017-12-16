@@ -7,7 +7,7 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Produto'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Cadastrar Produto'), ['action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="produtos index large-9 medium-8 columns content">
@@ -35,12 +35,12 @@
                 <td><?= h($produto->principioAtivo) ?></td>
                 <td><?= h($produto->categoria) ?></td>
                 <td><?= h($produto->lote) ?></td>
-                <td><?= h($produto->validade->format(DATE_RFC850)) ?></td>
+                <td><?= h($produto->validade->format('d/m/y')) ?></td>
                 <td><?= $this->Number->format($produto->quantidade) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $produto->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $produto->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $produto->id], ['confirm' => __('Are you sure you want to delete # {0}?', $produto->id)]) ?>
+                    <?= $this->Html->link(__('Visualizar'), ['action' => 'view', $produto->id]) ?><br>
+                    <?= $this->Html->link(__('Editar'), ['action' => 'edit', $produto->id]) ?><br>
+                    <?= $this->Form->postLink(__('Deletar'), ['action' => 'delete', $produto->id], ['confirm' => __('Are you sure you want to delete # {0}?', $produto->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>
