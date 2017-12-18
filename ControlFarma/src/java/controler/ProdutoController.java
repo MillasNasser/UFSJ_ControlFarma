@@ -4,9 +4,11 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -47,9 +49,10 @@ public class ProdutoController extends HttpServlet {
 	 * @param request
 	 * @param response
 	 * @throws java.io.IOException
+	 * @throws javax.servlet.ServletException
 	 */
 	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
 		response.setContentType("text/html;charset=UTF-8");
 		String metodoString = request.getParameter("enviar");
@@ -58,7 +61,7 @@ public class ProdutoController extends HttpServlet {
 
 		switch (metodoString) {
 
-			case "cadsastrar":
+			case "cadastrar":
 				getProduto().setNome(request.getParameter("nome"));
 				getProduto().setPrincipioAtivo(request.getParameter("principio_ativo"));
 				getProduto().setCodigo(Integer.parseInt(request.getParameter("codigo")));
@@ -67,21 +70,19 @@ public class ProdutoController extends HttpServlet {
 				getProduto().setPreco(Float.parseFloat(request.getParameter("preco")));
 				getProduto().setValidade(request.getParameter("vencimento"));
 				this.salvar();
-
+				try (PrintWriter out = response.getWriter()) {
+         
+					out.println("<!DOCTYPE html>");
+					out.println("<html>");										
+					out.println("<body>");
+					out.println("<script> window.top.location.href=\"index.html\"</script>");										
+					out.println("</body>");
+					out.println("</html>");
+					out.close();
+				}				
+				break;			
+			case "fazerpedido":
+				break;				
 		}
 	}
 }
-
-/*try (PrintWriter out = response.getWriter()) {
-         
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet NewServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet NewServlet at " + metodoString + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-            out.close();
-}*/

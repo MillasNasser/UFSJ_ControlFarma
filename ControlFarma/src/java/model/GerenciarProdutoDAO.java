@@ -84,6 +84,7 @@ public class GerenciarProdutoDAO {
 			p.setPrincipioAtivo(lerArq.readLine());
 			p.setLote(lerArq.readLine());
 			p.setValidade(lerArq.readLine());
+			lista.add(p);
 		}
 		return lista;
 	}
