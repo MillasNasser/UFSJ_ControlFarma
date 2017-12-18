@@ -37,3 +37,4 @@
 *.zip
 /ControlFarma/nbproject/private/
 /ControlFarma/build/
+/ControlFarma/dist/

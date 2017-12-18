@@ -10,18 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 import model.GerenciarProdutoDAO;
 import model.Produto;
 
-@WebServlet(name = "ProdutoController", urlPatterns = {"produtocontroller"})
-public class ProdutoController extends HttpServlet {
-    
-    /**
-     *
-     * @param request
-     * @param response
-     */
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response){
-            
-    }
+@WebServlet(name = "ProdutoController", urlPatterns = {"/produtocontroller"})
+public class ProdutoController extends HttpServlet {        
     
     private Produto produto;
 
@@ -46,5 +36,17 @@ public class ProdutoController extends HttpServlet {
     public void excluir() throws IOException{
         
         new GerenciarProdutoDAO().excluir(produto.getCodigo());
+    }
+    
+    /**
+     *
+     * @param request
+     * @param response
+     */
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response){
+       
+        String metodoString = request.getParameter("enviar");
+        System.out.println("metodo recebido: " + metodoString);
     }
 }
