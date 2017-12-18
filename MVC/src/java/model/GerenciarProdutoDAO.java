@@ -15,8 +15,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class GerenciarProdutoDAO {
-     
-    
+         
     public void cadastrar(Produto produto) throws IOException{
         String arq = "/home/user/Projetos/MVC/database/produtos.txt";
         try (PrintWriter escritor = new PrintWriter(
@@ -67,7 +66,7 @@ public class GerenciarProdutoDAO {
             }
         } catch (FileNotFoundException ex) {
             Logger.getLogger(DAOBdFuncionarios.class.getName()).log(Level.SEVERE, null, ex);
-        }        
+        }
     }
     
     public List<Produto> listar() throws IOException, ParseException{
@@ -95,5 +94,30 @@ public class GerenciarProdutoDAO {
         
         new GerenciarProdutoDAO().excluir(produto.getCodigo());
         new GerenciarProdutoDAO().cadastrar(produto);
+    }
+    
+    public Produto getProdudo(int codigo) throws Exception{
+        
+        String path = "/home/user/Projetos/MVC/database/produtos.txt";
+        List<Produto> lista = new ArrayList<>();
+        FileReader arq = new FileReader(path);
+        BufferedReader lerArq = new BufferedReader(arq);
+        String texto = "", temp;        
+        while((temp = lerArq.readLine()) != null){ // enquanto não for o fim do arquivo.
+            
+            Produto p = new Produto();
+            p.setCodigo(Integer.parseInt(temp));
+            p.setNome(lerArq.readLine());
+            p.setPreco(Float.parseFloat(lerArq.readLine()));
+            p.setCategoria(lerArq.readLine());
+            p.setPrincipioAtivo(lerArq.readLine());
+            p.setLote(lerArq.readLine());
+            p.setValidade(new SimpleDateFormat().parse(lerArq.readLine()));
+            if(p.getCodigo() == codigo){
+                
+                return p;
+            }
+        }
+        throw new Exception("produto não encontrado.");
     }
 }

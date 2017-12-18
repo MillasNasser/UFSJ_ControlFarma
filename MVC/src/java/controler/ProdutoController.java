@@ -1,13 +1,32 @@
 package controler;
 
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.List;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import model.GerenciarProdutoDAO;
 import model.Produto;
 
-public class ProdutoController {
+public class ProdutoController extends HttpServlet {
     
-    Produto produto;
+    /**
+     *
+     * @param request
+     * @param response
+     * @throws IOException
+     */
+    @WebServlet(name = "PedidoController", urlPatterns = {"/ProdutoController"})
+    
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response){
+    
+    
+    }
+    
+    private Produto produto;
 
     public Produto getProduto() {
         return produto;
@@ -19,17 +38,16 @@ public class ProdutoController {
     
     public void salvar () throws IOException{
         
-        GerenciarProdutoDAO p = new GerenciarProdutoDAO();
-        p.cadastrar(this.produto);
+        new GerenciarProdutoDAO().cadastrar(produto);
     }
     
-    public void listar(){
+    public void listar() throws IOException, ParseException{
         
         List <Produto> lista = new GerenciarProdutoDAO().listar();
-    }
+    }      
     
-    public void excluir(){
+    public void excluir() throws IOException{
         
-        
+        new GerenciarProdutoDAO().excluir(produto.getCodigo());
     }
 }
