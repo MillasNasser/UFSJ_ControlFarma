@@ -2,7 +2,7 @@ body{
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
-	background: #CEF6CE url("img/242.png");
+	background: #CEF6CE url("../imgs/242.png");
 	background-size: 150px;
 	color: #111;
 }
@@ -40,6 +40,12 @@ li button:hover{
 	background-color: #07190B;
 }
 
+iframe{
+	width: 70vw;
+	height: 80vh;
+	border: none;
+}
+
 .hidden{
 	visibility: hidden;
 	display: none;
@@ -75,6 +81,7 @@ li button:hover{
 
 #sidebar{
 	margin-right: 1em;
+	margin-top: -0.9em;
 }
 
 #maintxt{
@@ -83,4 +90,5 @@ li button:hover{
 	color: #D0F5A9; 
 	font-size: 3em;
 	box-shadow: 0.1em 0.1em #173B0B;
+	margin-bottom: 0.3em;
 }
