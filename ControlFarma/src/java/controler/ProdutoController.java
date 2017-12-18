@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import model.GerenciarProdutoDAO;
 import model.Produto;
 
+@WebServlet(name = "ProdutoController", urlPatterns = {"produtocontroller"})
 public class ProdutoController extends HttpServlet {
     
     /**
@@ -17,12 +18,9 @@ public class ProdutoController extends HttpServlet {
      * @param request
      * @param response
      */
-    @WebServlet(name = "PedidoController", urlPatterns = {"/ProdutoController"})
-    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response){
-    
-        
+            
     }
     
     private Produto produto;

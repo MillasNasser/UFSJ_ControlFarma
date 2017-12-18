@@ -35,3 +35,5 @@
 
 *.pdf
 *.zip
+/ControlFarma/nbproject/private/
+/ControlFarma/build/
