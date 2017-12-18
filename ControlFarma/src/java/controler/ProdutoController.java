@@ -15,46 +15,64 @@ import model.GerenciarProdutoDAO;
 import model.Produto;
 
 @WebServlet(name = "ProdutoController", urlPatterns = {"/produtocontroller"})
-public class ProdutoController extends HttpServlet {        
-    
-    private Produto produto;
+public class ProdutoController extends HttpServlet {
 
-    public Produto getProduto() {
-        return produto;
-    }
+	private Produto produto;
 
-    public void setProduto(Produto produto) {
-        this.produto = produto;
-    }
-    
-    public void salvar () throws IOException{
-        
-        new GerenciarProdutoDAO().cadastrar(getProduto());
-    }
-    
-    public void listar() throws IOException, ParseException{
-        
-        List <Produto> lista = new GerenciarProdutoDAO().listar();
-    }      
-    
-    public void excluir() throws IOException{
-        
-        new GerenciarProdutoDAO().excluir(produto.getCodigo());
-    }
-    
-    /**
-     *
-     * @param request
-     * @param response
-     * @throws java.io.IOException
-     */
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException{
-       
-        
-        response.setContentType("text/html;charset=UTF-8");
-        String metodoString = request.getParameter("enviar");
-        /*try (PrintWriter out = response.getWriter()) {
+	public Produto getProduto() {
+		return produto;
+	}
+
+	public void setProduto(Produto produto) {
+		this.produto = produto;
+	}
+
+	public void salvar() throws IOException {
+
+		new GerenciarProdutoDAO().cadastrar(getProduto());
+	}
+
+	public void listar() throws IOException, ParseException {
+
+		List<Produto> lista = new GerenciarProdutoDAO().listar();
+	}
+
+	public void excluir() throws IOException {
+
+		new GerenciarProdutoDAO().excluir(produto.getCodigo());
+	}
+
+	/**
+	 *
+	 * @param request
+	 * @param response
+	 * @throws java.io.IOException
+	 */
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+		response.setContentType("text/html;charset=UTF-8");
+		String metodoString = request.getParameter("enviar");
+
+		this.produto = new Produto();
+
+		switch (metodoString) {
+
+			case "cadsastrar":
+				getProduto().setNome(request.getParameter("nome"));
+				getProduto().setPrincipioAtivo(request.getParameter("principio_ativo"));
+				getProduto().setCodigo(Integer.parseInt(request.getParameter("codigo")));
+				getProduto().setCategoria(request.getParameter("categoria"));
+				getProduto().setLote(request.getParameter("lote"));
+				getProduto().setPreco(Float.parseFloat(request.getParameter("preco")));
+				getProduto().setValidade(request.getParameter("vencimento"));
+				this.salvar();
+
+		}
+	}
+}
+
+/*try (PrintWriter out = response.getWriter()) {
          
             out.println("<!DOCTYPE html>");
             out.println("<html>");
@@ -66,17 +84,4 @@ public class ProdutoController extends HttpServlet {
             out.println("</body>");
             out.println("</html>");
             out.close();
-        }*/
-        
-        this.produto = new Produto();
-        
-        getProduto().setNome(request.getParameter("nome"));
-        getProduto().setPrincipioAtivo(request.getParameter("principio_ativo"));
-        getProduto().setCodigo(Integer.parseInt(request.getParameter("codigo")));
-        getProduto().setCategoria(request.getParameter("categoria"));
-        getProduto().setLote(request.getParameter("lote"));
-        getProduto().setPreco(Float.parseFloat(request.getParameter("preco")));
-        getProduto().setValidade(request.getParameter("vencimento"));
-        this.salvar();
-    }    
-}
+}*/

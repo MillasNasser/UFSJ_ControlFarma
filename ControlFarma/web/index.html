@@ -1,48 +1,47 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title></title>
-	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<script src="js/scripts.js"></script>
-	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-</head>
-<body>
-	<div id="maintxt" class="w_100">
-		<img src="imgs/simbol.png" width="120" class="bloco float_left" style="padding: 0.2em 0 0 0.2em;"
-		onclick="show1div('hello')">
-		<h1 class="bloco" onclick="show1div('hello')">Control Farma</h1>
-	</div>
-	<div id="sidebar" class="bg_cinza w_25 h_100 bloco float_left">
-		<ul >
-			<li><button onclick="show1div('cadastro')">
-				Cadastrar produto
-			</button></li>
-			<li><button onclick="show1div('list_prod')">
-				Listar produto
-			</button></li>
-			<li><button onclick="show1div('pedido')">
-				Pedido
-			</button></li>
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script src="js/scripts.js"></script>
+    </head>
+    <body>
+        <div id="maintxt" class="w_100">
+            <img src="imgs/simbol.png" width="120" class="bloco float_left" style="padding: 0.2em 0 0 0.2em;"
+                 onclick="show1div('hello')">
+            <h1 class="bloco" onclick="show1div('hello')">Control Farma</h1>
+        </div>
+        <div id="sidebar" class="bg_cinza w_25 h_100 bloco float_left">
+            <ul >
+                <li><button onclick="show1div('cadastro')">
+                        Cadastrar produto
+                    </button></li>
+                <li><button onclick="show1div('list_prod')">
+                        Listar produto
+                    </button></li>
+                <li><button onclick="show1div('pedido')">
+                        Pedido
+                    </button></li>
 
-		</ul>
-	</div>
+            </ul>
+        </div>
 
-	<div id="hello" class="">
-		<iframe src="hello.html"></iframe>
-	</div>
+        <div id="hello" class="">
+            <iframe src="hello.html"></iframe>
+        </div>
 
-	<div id="cadastro" class="hidden ">
-		<iframe src="cadastro.html"></iframe>
-	</div>
+        <div id="cadastro" class="hidden ">
+            <iframe src="cadastro.html"></iframe>
+        </div>
 
-	<div id="pedido" class="hidden ">
-		<iframe src="pedido.html"></iframe>
-	</div>
+        <div id="pedido" class="hidden ">
+            <iframe src="pedido.html"></iframe>
+        </div>
 
-	<div id="list_prod" class="hidden ">
-		<iframe src="list_prod.html"></iframe>
-	</div>
-	
-</body>
+        <div id="list_prod" class="hidden ">
+            <iframe src="list_prod.html"></iframe>
+        </div>
+
+    </body>
 </html>
