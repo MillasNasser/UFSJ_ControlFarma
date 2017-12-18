@@ -17,9 +17,9 @@ import java.util.logging.Logger;
 public class GerenciarProdutoDAO {
          
     public void cadastrar(Produto produto) throws IOException{
-        String arq = "/home/user/Projetos/MVC/database/produtos.txt";
+        String arq = "/home/user/produtos.txt";
         try (PrintWriter escritor = new PrintWriter(
-                new BufferedWriter(new FileWriter(arq, true)))) {
+                new BufferedWriter(new FileWriter(arq, false)))) {
             escritor.println(produto.getCodigo());
             escritor.println(produto.getNome());
             escritor.println(produto.getPreco());
