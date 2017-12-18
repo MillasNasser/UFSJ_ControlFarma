@@ -71,10 +71,6 @@ iframe{
 	padding-bottom: 100%;
 }
 
-.noPadMarg{
-
-}
-
 .float_left{
 	float: left;
 }
@@ -91,4 +87,12 @@ iframe{
 	font-size: 3em;
 	box-shadow: 0.1em 0.1em #173B0B;
 	margin-bottom: 0.3em;
+}
+
+#tabelaPedidos{
+	border-collapse: collapse;
+}
+
+#tabelaPedidos td{
+	border: 0.1em solid #444;
 }
