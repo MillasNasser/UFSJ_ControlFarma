@@ -19,7 +19,7 @@ public class GerenciarProdutoDAO {
     
     public void cadastrar(Produto produto) throws IOException{
         try (PrintWriter escritor = new PrintWriter(
-                new BufferedWriter(new FileWriter(path, true)))) {
+                new BufferedWriter(new FileWriter(path, true)))){
             escritor.println(produto.getCodigo());
             escritor.println(produto.getNome());
             escritor.println(produto.getPreco());
