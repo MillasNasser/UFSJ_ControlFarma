@@ -4,11 +4,12 @@
 	<title></title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="scripts.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 </head>
-<script src="scripts.js"></script>
 <body>
 	<div id="maintxt" class="w_100">
-		<img src="simbol.png" width="120" class="bloco float_left" style="padding: 0.2em 0 0 0.2em;"
+		<img src="img/simbol.png" width="120" class="bloco float_left" style="padding: 0.2em 0 0 0.2em;"
 		onclick="show1div('hello')">
 		<h1 class="bloco" onclick="show1div('hello')">Control Farma</h1>
 	</div>
@@ -18,51 +19,29 @@
 				Cadastrar produto
 			</button></li>
 			<li><button onclick="show1div('pedido')">
+				Listar produto
+			</button></li>
+			<li><button onclick="show1div('list_prod')">
 				Pedido
 			</button></li>
+
 		</ul>
 	</div>
 
 	<div id="hello" class="">
-		<h2>Bem vindo</h2>
-		<p>Sistema Control Farma para o gerenciamento de produtos e pedidos!!!</p>
+		<script>loadModule('templates/hello.html','#hello')</script>
 	</div>
 
 	<div id="cadastro" class="hidden ">
-		<h2>Cadastrar Produto</h2>
-		<form>
-			<table>
-				<tr><td>Nome</td><td><input type="text" name="nome" placeholder="John"></td></tr>
-				<tr><td>Código</td><td><input type="text" name="codigo" placeholder="1781234566578"></td></tr>
-				<tr><td>Princípio ativo</td><td><input type="text" name="princip_ativo" placeholder="Queratolíticos; ... ;"></td></tr>
-				<tr><td>Categoria</td><td><input type="text" name="categoria" placeholder="Inflamatório; ... ;"></td></tr>
-				<tr><td>Lote</td><td><input type="text" name="lote" placeholder="lt8979746"></td></tr>
-				<tr><td>Vencimento</td><td><input type="date" name="vencimento" placeholder="dd/mm/yyyy"></td></tr>
-				<tr><td>Valor unitário</td><td><input type="text" name="preco" placeholder="11,11"></td></tr>
-				<tr><td colspan="2"><input type="submit" name="submit" value="Cadastrar"></td></tr>
-			</table>
-		</form>
+		<script>loadModule('templates/cadastro.html','#cadastro')</script>
 	</div>
 
 	<div id="pedido" class="hidden ">
-		<h2>Pedido</h2>
-		<form>
-			<table id="tabelaPedidos">
-				<thead>
-					<th>Produto</th>
-					<th>Codigo</th>
-					<th>Valor Unitario</th>
-				</thead>
-				<tfoot>
-					<tr><td colspan="2"><input type="text" name="cod" class="" placeholder="Código do produto"></td>
-						<td><input type="text" name="quantidade" placeholder="qnt" size="2"><button>Adicionar</button></td>
-					</tr>
-				</tfoot>
-				<tbody>
-				</tbody>
-			</table>
-			<input type="submit" name="fim_pedido" value="Finalizar Pedido">
-		</form>
+		<script>loadModule('templates/pedido.html','#pedido')</script>
+	</div>
+
+	<div id="list_prod" class="hidden ">
+		<script>loadModule('templates/list_prod.html','#list_prod')</script>
 	</div>
 	
 </body>

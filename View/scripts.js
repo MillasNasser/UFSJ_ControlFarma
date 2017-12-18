@@ -20,3 +20,7 @@
 		}
 		remClass('hidden',nome);
 	}
+
+	function loadModule(modulo, lugar){
+		$(lugar).load(modulo);
+	}
