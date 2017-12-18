@@ -24,3 +24,14 @@
 	function loadModule(modulo, lugar){
 		$(lugar).load(modulo);
 	}
+	
+	function confirmaProduto(id){
+		var tabela = document.getElementById(id);
+		var mensagem = "";
+		var itens = ["Nome", "Código", "Princípio Ativo", "Categoria", "Lote", "Vencimento", "Valor Unitario"];
+		for (let i = 0; i < tabela.rows.length-1; i++) {
+			const linha = tabela.rows[i];
+			mensagem += itens[i]+": "+linha.cells[1].getElementsByTagName('input')[0].value+"\n";
+		}
+		confirm(mensagem);
+	}
