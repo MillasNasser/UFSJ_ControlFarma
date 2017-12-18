@@ -29,19 +29,57 @@
 	</div>
 
 	<div id="hello" class="">
-		<iframe src="templates/hello.html"></iframe>
+		<h2>Bem vindo</h2>
+		<p>Sistema Control Farma para o gerenciamento de produtos e pedidos!!!</p>
 	</div>
 
 	<div id="cadastro" class="hidden ">
-		<iframe src="templates/cadastro.html"></iframe>
+		<h2>Cadastrar Produto</h2>
+		<form action="../../src/java/controller/ProdutoController" method="POST">
+			<table>
+				<tr><td>Nome</td><td><input type="text" name="nome" placeholder="Remedio"></td></tr>
+				<tr><td>Código</td><td><input type="text" name="codigo" placeholder="1781234566578"></td></tr>
+				<tr><td>Princípio ativo</td><td><input type="text" name="princip_ativo" placeholder="Queratolíticos; ... ;"></td></tr>
+				<tr><td>Categoria</td><td><input type="text" name="categoria" placeholder="Inflamatório; ... ;"></td></tr>
+				<tr><td>Lote</td><td><input type="text" name="lote" placeholder="lt8979746"></td></tr>
+				<tr><td>Vencimento</td><td><input type="date" name="vencimento" placeholder="dd/mm/yyyy"></td></tr>
+				<tr><td>Valor unitário</td><td><input type="text" name="preco" placeholder="11,11"></td></tr>
+				<tr><td colspan="2"><input type="submit" name="enviar" value="Cadastrar"></td></tr>
+			</table>
+		</form>
 	</div>
 
 	<div id="pedido" class="hidden ">
-		<iframe src="templates/pedido.html"></iframe>
+		<h2>Pedido</h2>
+		<form>
+			<table id="tabelaPedidos">
+				<thead>
+					<th>Produto</th>
+					<th>Codigo</th>
+					<th>Valor Unitario</th>
+				</thead>
+				<tfoot>
+					<tr><td colspan="2"><input type="text" name="cod" class="" placeholder="Código do produto"></td>
+						<td><input type="text" name="quantidade" placeholder="qnt" size="2"><button>Adicionar</button></td>
+					</tr>
+				</tfoot>
+				<tbody>
+				</tbody>
+			</table>
+			<input type="submit" name="fim_pedido" value="Finalizar Pedido">
+		</form>
 	</div>
 
 	<div id="list_prod" class="hidden ">
-		<iframe src="templates/list_prod.html"></iframe>
+		<table id="listaPedido">
+			<thead>
+				<th>Produto</th>
+				<th>Codigo</th>
+				<th>Valor Unitario</th>
+			</thead>
+			<tfoot></tfoot>
+			<tbody></tbody>
+		</table>
 	</div>
 	
 </body>
