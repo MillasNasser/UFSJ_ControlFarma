@@ -54,7 +54,7 @@ public class ProdutoController extends HttpServlet {
         
         response.setContentType("text/html;charset=UTF-8");
         String metodoString = request.getParameter("enviar");
-        try (PrintWriter out = response.getWriter()) {
+        /*try (PrintWriter out = response.getWriter()) {
          
             out.println("<!DOCTYPE html>");
             out.println("<html>");
@@ -62,31 +62,21 @@ public class ProdutoController extends HttpServlet {
             out.println("<title>Servlet NewServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet NewServlet at " + System.getProperty("user.dir") + "</h1>");
+            out.println("<h1>Servlet NewServlet at " + metodoString + "</h1>");
             out.println("</body>");
             out.println("</html>");
-        }       
+            out.close();
+        }*/
         
+        this.produto = new Produto();
         
         getProduto().setNome(request.getParameter("nome"));
         getProduto().setPrincipioAtivo(request.getParameter("principio_ativo"));
         getProduto().setCodigo(Integer.parseInt(request.getParameter("codigo")));
-        getProduto().setCategoria(request.getParameter("cateforia"));
+        getProduto().setCategoria(request.getParameter("categoria"));
         getProduto().setLote(request.getParameter("lote"));
-        getProduto().setNome(metodoString);
-     
-     
-        try {
-            getProduto().setValidade(new SimpleDateFormat().parse(request.getParameter("vencimento")));
-        } catch (ParseException ex) {
-            Logger.getLogger(ProdutoController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        switch (metodoString) {
-
-            case "cadastrar":
-
-                break;
-        }
+        getProduto().setPreco(Float.parseFloat(request.getParameter("preco")));
+        getProduto().setValidade(request.getParameter("vencimento"));
         this.salvar();
     }    
 }

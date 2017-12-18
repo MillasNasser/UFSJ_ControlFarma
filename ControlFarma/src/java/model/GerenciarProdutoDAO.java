@@ -9,17 +9,17 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class GerenciarProdutoDAO {
          
+    String path = System.getProperty("user.home") + "/produtos.txt";
+    
     public void cadastrar(Produto produto) throws IOException{
-        String arq = System.getProperty("user.dir") + "/produtos.txt";
         try (PrintWriter escritor = new PrintWriter(
-                new BufferedWriter(new FileWriter(arq, true)))) {
+                new BufferedWriter(new FileWriter(path, true)))) {
             escritor.println(produto.getCodigo());
             escritor.println(produto.getNome());
             escritor.println(produto.getPreco());
@@ -27,13 +27,12 @@ public class GerenciarProdutoDAO {
             escritor.println(produto.getPrincipioAtivo());
             escritor.println(produto.getLote());
             escritor.println(produto.getValidade());
-            escritor.close();                        
+            escritor.close();
         }
     }    
     
     public void excluir(int codigo) throws IOException{
-        
-        String path = System.getProperty("user.dir") + "produtos.txt";
+                
         try {
             FileReader arq = new FileReader(path);
             BufferedReader lerArq = new BufferedReader(arq);
@@ -70,8 +69,7 @@ public class GerenciarProdutoDAO {
     }
     
     public List<Produto> listar() throws IOException, ParseException{
-        
-        String path = System.getProperty("user.dir") + "produtos.txt";
+                
         List<Produto> lista = new ArrayList<>();
         FileReader arq = new FileReader(path);
         BufferedReader lerArq = new BufferedReader(arq);
@@ -85,7 +83,7 @@ public class GerenciarProdutoDAO {
             p.setCategoria(lerArq.readLine());
             p.setPrincipioAtivo(lerArq.readLine());
             p.setLote(lerArq.readLine());
-            p.setValidade(new SimpleDateFormat().parse(lerArq.readLine()));
+            p.setValidade(lerArq.readLine());
         }
         return lista;
     }
@@ -97,8 +95,7 @@ public class GerenciarProdutoDAO {
     }
     
     public Produto getProduto(int codigo) throws Exception{
-        
-        String path = System.getProperty("user.dir") + "produtos.txt";
+                
         List<Produto> lista = new ArrayList<>();
         FileReader arq = new FileReader(path);
         BufferedReader lerArq = new BufferedReader(arq);
@@ -112,7 +109,7 @@ public class GerenciarProdutoDAO {
             p.setCategoria(lerArq.readLine());
             p.setPrincipioAtivo(lerArq.readLine());
             p.setLote(lerArq.readLine());
-            p.setValidade(new SimpleDateFormat().parse(lerArq.readLine()));
+            p.setValidade(lerArq.readLine());
             if(p.getCodigo() == codigo){
                 
                 return p;

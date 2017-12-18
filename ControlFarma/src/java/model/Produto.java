@@ -8,7 +8,7 @@ public class Produto {
     private String nome;
     private String categoria;
     private String principioAtivo;
-    private Date validade;
+    private String validade;
     private String lote;
     private float preco;
     private int quantidade;
@@ -52,11 +52,11 @@ public class Produto {
         this.principioAtivo = principioAtivo;
     }
 
-    public Date getValidade() {
+    public String getValidade() {
         return validade;
     }
 
-    public void setValidade(Date validade) {
+    public void setValidade(String validade) {
         this.validade = validade;
     }
 
