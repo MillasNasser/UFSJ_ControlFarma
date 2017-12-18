@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="scripts.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+</head>
+<body>
+	<div id="maintxt" class="w_100">
+		<img src="img/simbol.png" width="120" class="bloco float_left" style="padding: 0.2em 0 0 0.2em;"
+		onclick="show1div('hello')">
+		<h1 class="bloco" onclick="show1div('hello')">Control Farma</h1>
+	</div>
+	<div id="sidebar" class="bg_cinza w_25 h_100 bloco float_left">
+		<ul >
+			<li><button onclick="show1div('cadastro')">
+				Cadastrar produto
+			</button></li>
+			<li><button onclick="show1div('list_prod')">
+				Listar produto
+			</button></li>
+			<li><button onclick="show1div('pedido')">
+				Pedido
+			</button></li>
+
+		</ul>
+	</div>
+
+	<div id="hello" class="">
+		<script>loadModule('templates/hello.html','#hello')</script>
+	</div>
+
+	<div id="cadastro" class="hidden ">
+		<script>loadModule('templates/cadastro.html','#cadastro')</script>
+	</div>
+
+	<div id="pedido" class="hidden ">
+		<script>loadModule('templates/pedido.html','#pedido')</script>
+	</div>
+
+	<div id="list_prod" class="hidden ">
+		<script>loadModule('templates/list_prod.html','#list_prod')</script>
+	</div>
+	
+</body>
+</html>
