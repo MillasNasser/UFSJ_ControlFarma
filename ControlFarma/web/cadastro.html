@@ -4,7 +4,7 @@
 
 <h2>Cadastrar Produto</h2>
 <form action="produtocontroller" method="POST">
-	<table>
+	<table id="CadastraProduto">
 		<tr><td>Nome</td><td><input type="text" name="nome" value="Remedio"></td></tr>
 		<tr><td>Código</td><td><input type="text" name="codigo" value="1781238"></td></tr>
 		<tr><td>Princípio ativo</td><td><input type="text" name="principio_ativo" value="Queratolíticos; ... ;"></td></tr>
@@ -12,6 +12,8 @@
 		<tr><td>Lote</td><td><input type="text" name="lote" value="lt8979746"></td></tr>
 		<tr><td>Vencimento</td><td><input type="text" name="vencimento" value="01/01/1970"></td></tr>
 		<tr><td>Valor unitário</td><td><input type="text" name="preco" value="11.11"></td></tr>
-		<tr><td colspan="2"><input type="submit" name="enviar" value="cadastrar" onclick="confirmaProduto('CadastraProduto');"></td></tr>
+		<tr><td colspan="2">
+			<button type="button" onclick="confirmaProduto('CadastraProduto');">Cadastrar</button>
+		</td></tr>
 	</table>
 </form>
