@@ -17,9 +17,9 @@ import java.util.logging.Logger;
 public class GerenciarProdutoDAO {
          
     public void cadastrar(Produto produto) throws IOException{
-        String arq = "/home/user/produtos.txt";
+        String arq = System.getProperty("user.dir") + "/produtos.txt";
         try (PrintWriter escritor = new PrintWriter(
-                new BufferedWriter(new FileWriter(arq, false)))) {
+                new BufferedWriter(new FileWriter(arq, true)))) {
             escritor.println(produto.getCodigo());
             escritor.println(produto.getNome());
             escritor.println(produto.getPreco());
@@ -33,7 +33,7 @@ public class GerenciarProdutoDAO {
     
     public void excluir(int codigo) throws IOException{
         
-        String path = "/home/user/Projetos/MVC/database/produtos.txt";
+        String path = System.getProperty("user.dir") + "produtos.txt";
         try {
             FileReader arq = new FileReader(path);
             BufferedReader lerArq = new BufferedReader(arq);
@@ -71,7 +71,7 @@ public class GerenciarProdutoDAO {
     
     public List<Produto> listar() throws IOException, ParseException{
         
-        String path = "/home/user/Projetos/MVC/database/produtos.txt";
+        String path = System.getProperty("user.dir") + "produtos.txt";
         List<Produto> lista = new ArrayList<>();
         FileReader arq = new FileReader(path);
         BufferedReader lerArq = new BufferedReader(arq);
@@ -96,9 +96,9 @@ public class GerenciarProdutoDAO {
         new GerenciarProdutoDAO().cadastrar(produto);
     }
     
-    public Produto getProdudo(int codigo) throws Exception{
+    public Produto getProduto(int codigo) throws Exception{
         
-        String path = "/home/user/Projetos/MVC/database/produtos.txt";
+        String path = System.getProperty("user.dir") + "produtos.txt";
         List<Produto> lista = new ArrayList<>();
         FileReader arq = new FileReader(path);
         BufferedReader lerArq = new BufferedReader(arq);

@@ -25,6 +25,6 @@ public class PedidoDAO {
     
     public ItemPedido novoItemPedido(int codigo, int quantidade) throws Exception{
                                 
-        return new ItemPedido(new GerenciarProdutoDAO().getProdudo(codigo), quantidade);
+        return new ItemPedido(new GerenciarProdutoDAO().getProduto(codigo), quantidade);
     }
 }

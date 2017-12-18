@@ -29,7 +29,7 @@ public class ProdutoController extends HttpServlet {
     
     public void salvar () throws IOException{
         
-        new GerenciarProdutoDAO().cadastrar(produto);
+        new GerenciarProdutoDAO().cadastrar(getProduto());
     }
     
     public void listar() throws IOException, ParseException{
@@ -50,9 +50,24 @@ public class ProdutoController extends HttpServlet {
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException{
-        Runtime.getRuntime().exec("lxterminal");
+       
+        
         response.setContentType("text/html;charset=UTF-8");
         String metodoString = request.getParameter("enviar");
+        try (PrintWriter out = response.getWriter()) {
+         
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet NewServlet</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet NewServlet at " + System.getProperty("user.dir") + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+        }       
+        
+        
         getProduto().setNome(request.getParameter("nome"));
         getProduto().setPrincipioAtivo(request.getParameter("principio_ativo"));
         getProduto().setCodigo(Integer.parseInt(request.getParameter("codigo")));
@@ -72,6 +87,6 @@ public class ProdutoController extends HttpServlet {
 
                 break;
         }
-        new GerenciarProdutoDAO().cadastrar(getProduto());
+        this.salvar();
     }    
 }
