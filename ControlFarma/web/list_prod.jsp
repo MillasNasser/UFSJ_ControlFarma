@@ -11,7 +11,7 @@
     <th>Validade</th>
     <th>Princípio ativo</th>
     <% 
-        List<Produto> list = new GerenciarProdutoDAO().listar(); 
+        List<Produto> list = new GerenciarProdutoDAO().listar();
         for(Produto produto : list){%>
         
             <tr> 

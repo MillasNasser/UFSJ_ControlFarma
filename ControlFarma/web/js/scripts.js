@@ -33,5 +33,7 @@
 			const linha = tabela.rows[i];
 			mensagem += itens[i]+": "+linha.cells[1].getElementsByTagName('input')[0].value+"\n";
 		}
-		confirm(mensagem);
+		if(!confirm(mensagem)){
+			window.top.location.href='index.html';
+		}
 	}
