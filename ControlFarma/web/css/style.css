@@ -95,4 +95,5 @@ iframe{
 
 #tabelaPedidos td{
 	border: 0.1em solid #444;
+	text-align: center;
 }

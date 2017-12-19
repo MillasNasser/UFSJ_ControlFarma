@@ -73,7 +73,7 @@ public class ProdutoController extends HttpServlet {
 				try (PrintWriter out = response.getWriter()) {
          
 					out.println("<!DOCTYPE html>");
-					out.println("<html>");										
+					out.println("<html>");								
 					out.println("<body>");
 					out.println("<script> window.top.location.href=\"index.html\"</script>");										
 					out.println("</body>");
