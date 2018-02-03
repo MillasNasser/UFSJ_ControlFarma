@@ -9,11 +9,11 @@ import model.ItemPedido;
 import model.Pedido;
 
 public class PedidoDAO {
-    
+    String path = System.getProperty("user.home") + "/pedidos.txt";
     public void salvar(Pedido pedido) throws IOException{
-        String arq = "/home/user/Projetos/MVC/database/pedidos.txt";
+        
         try (PrintWriter escritor = new PrintWriter(
-                new BufferedWriter(new FileWriter(arq, true)))) {
+                new BufferedWriter(new FileWriter(path, true)))) {
             for(ItemPedido item:pedido.getItens()){
             
                 escritor.println(item.getQuantidade());
